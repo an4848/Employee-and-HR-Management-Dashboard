@@ -13,13 +13,34 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration from Environment or defaults
-DB_CONFIG = {
-    "host": os.getenv("MYSQL_HOST", "localhost"),
-    "port": int(os.getenv("MYSQL_PORT", 3306)),
-    "user": os.getenv("MYSQL_USER", "root"),
-    "password": os.getenv("MYSQL_PASSWORD", ""),
-    "database": os.getenv("MYSQL_DATABASE", "hr_management")
-}
+# Configuration from Streamlit Secrets or Environment
+try:
+    import streamlit as st
+
+    if "mysql" in st.secrets:
+        DB_CONFIG = {
+            "host": st.secrets["mysql"]["host"],
+            "port": int(st.secrets["mysql"]["port"]),
+            "user": st.secrets["mysql"]["user"],
+            "password": st.secrets["mysql"]["password"],
+            "database": st.secrets["mysql"]["database"]
+        }
+    else:
+        DB_CONFIG = {
+            "host": os.getenv("MYSQL_HOST", "localhost"),
+            "port": int(os.getenv("MYSQL_PORT", 3306)),
+            "user": os.getenv("MYSQL_USER", "root"),
+            "password": os.getenv("MYSQL_PASSWORD", ""),
+            "database": os.getenv("MYSQL_DATABASE", "hr_management")
+        }
+except Exception:
+    DB_CONFIG = {
+        "host": os.getenv("MYSQL_HOST", "localhost"),
+        "port": int(os.getenv("MYSQL_PORT", 3306)),
+        "user": os.getenv("MYSQL_USER", "root"),
+        "password": os.getenv("MYSQL_PASSWORD", ""),
+        "database": os.getenv("MYSQL_DATABASE", "hr_management")
+    }
 
 _cached_status: Optional[Dict[str, Any]] = None
 _last_status_check: float = 0
