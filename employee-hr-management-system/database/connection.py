@@ -14,17 +14,12 @@ load_dotenv()
 
 # Configuration from Environment or defaults
 # Configuration from Streamlit Secrets or Environment
+# Configuration from Streamlit Secrets or Environment
 try:
     import streamlit as st
-
-    if "mysql" in st.secrets:
-        DB_CONFIG = {
-            "host": st.secrets["mysql"]["host"],
-            "port": int(st.secrets["mysql"]["port"]),
-            "user": st.secrets["mysql"]["user"],
-            "password": st.secrets["mysql"]["password"],
-            "database": st.secrets["mysql"]["database"]
-        }
+    HAS_TIDB_SECRETS = "mysql" in st.secrets
+    if HAS_TIDB_SECRETS:
+        DB_CONFIG = dict(st.secrets["mysql"])
     else:
         DB_CONFIG = {
             "host": os.getenv("MYSQL_HOST", "localhost"),
@@ -34,6 +29,7 @@ try:
             "database": os.getenv("MYSQL_DATABASE", "hr_management")
         }
 except Exception:
+    HAS_TIDB_SECRETS = False
     DB_CONFIG = {
         "host": os.getenv("MYSQL_HOST", "localhost"),
         "port": int(os.getenv("MYSQL_PORT", 3306)),
