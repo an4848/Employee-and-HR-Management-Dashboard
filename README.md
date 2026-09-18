@@ -1,168 +1,118 @@
-# Employee & HR Management System
+# 🏢 Employee & HR Management Dashboard
 
-A full-stack academic **Employee & Human Resources Management System** built with **Python, Streamlit, Plotly, MySQL, and SQLite**.
+<p align="center">
 
-The system provides an interactive dashboard for managing and analysing employee information, departments, projects, attendance, leave, payroll, performance, training, and recruitment. The database is designed using **EER modelling, functional dependencies, and normalization up to Third Normal Form (3NF)**.
+**A full-stack Employee & Human Resources Management System built with Python, Streamlit, MySQL, and TiDB Cloud.**
 
----
+<a href="https://employee-and-hr-management-dashboard-wknmafdgk77vpdpfecrwwr.streamlit.app/">
+  🚀 Live Demo
+</a>
 
-## Overview
-
-The Employee & HR Management System is designed to provide a centralized platform for HR-related operations and analytics.
-
-The application combines:
-
-- A normalized relational database
-- MySQL database connectivity
-- Portable SQLite database support
-- Interactive Streamlit dashboard
-- Plotly-based data visualization
-- Employee search and filtering
-- CRUD operations
-- Payroll and attendance analytics
-- Project and training management
-- Recruitment analysis
-- Interactive SQL execution
-- Academic database documentation
-
-The application supports both **MySQL** and a **portable SQLite fallback**, allowing the project to run even when a MySQL server is not available.
+</p>
 
 ---
 
-## Key Features
+## 🚀 Live Application
 
-### Employee Management
+**Try the deployed application:**
 
-- View employee records
-- Search employees using multiple criteria
-- Filter employees by department, job title, and salary
-- Register new employees
-- View employee-related information
+👉 https://employee-and-hr-management-dashboard-wknmafdgk77vpdpfecrwwr.streamlit.app/
 
-### Department Management
-
-- View department information
-- Analyse department-wise employee distribution
-- Compare department budgets with payroll expenditure
-- Monitor budget utilization
-
-### Project Management
-
-- View active projects
-- Track employee-project assignments
-- View employee roles within projects
-- Track hours contributed by employees
-- Analyse project staffing
-
-### Attendance Management
-
-- View attendance records
-- Analyse attendance status
-- Monitor attendance compliance
-- Analyse work patterns
-
-### Leave Management
-
-- View leave requests
-- Analyse leave categories and statuses
-- Approve or manage leave requests
-- View leave-related statistics
-
-### Payroll Management
-
-- View payroll information
-- Analyse salary distributions
-- Compare salaries across departments
-- Analyse allowances and deductions
-- Perform net salary reconciliation
-
-### Performance Management
-
-- View employee performance reviews
-- Analyse performance ratings
-- Identify high-performing employees
-- Visualize rating distributions
-
-### Training Management
-
-- View training programs
-- Track employee participation
-- Analyse assessment scores
-- Analyse training performance and ROI
-
-### Recruitment Management
-
-- Track candidates through recruitment stages
-- Analyse recruitment conversion
-- Visualize the recruitment funnel
-- Analyse candidate progression
-
-### Interactive SQL Studio
-
-The dashboard includes an SQL interface that allows users to:
-
-- Execute SQL queries
-- View query results interactively
-- Run predefined academic queries
-- Analyse data directly from the database
+The application is deployed using **Streamlit Community Cloud** and connects to a **TiDB Cloud MySQL-compatible database**.
 
 ---
 
-## Technology Stack
+## 📊 Overview
 
-| Technology | Purpose |
-|---|---|
-| Python | Application development |
-| Streamlit | Interactive web dashboard |
-| Plotly | Data visualization |
-| MySQL | Primary relational database |
-| SQLite | Portable database fallback |
-| Pandas | Data processing |
-| SQL | Database design and queries |
-| Git & GitHub | Version control |
+The Employee & HR Management Dashboard is a centralized platform for managing and analysing employee and HR data.
+
+The system combines:
+
+* 🐍 Python application development
+* 🎈 Streamlit interactive dashboards
+* 🐬 MySQL-compatible relational database
+* ☁️ TiDB Cloud database hosting
+* 📈 Plotly data visualization
+* 🐼 Pandas data processing
+* 🔎 Interactive SQL querying
+* 🗃️ Normalized relational database design
+* 📚 3NF and functional-dependency documentation
+
+The database is designed around **Third Normal Form (3NF)** with clearly defined relationships, primary keys, foreign keys, and bridge tables.
 
 ---
 
-## System Architecture
+## ✨ Features
+
+| Module                 | Functionality                                     |
+| ---------------------- | ------------------------------------------------- |
+| 📊 Overview            | Executive HR metrics and analytics                |
+| 👥 Employees           | Employee records, search, filtering and CRUD      |
+| 🏛️ Departments        | Department information and budget analysis        |
+| 💼 Projects            | Projects, staffing and employee assignments       |
+| ⏱️ Attendance          | Attendance tracking and analysis                  |
+| 🏖️ Leave              | Leave requests and status analysis                |
+| 💰 Payroll             | Salary, allowances, deductions and reconciliation |
+| 🌟 Performance         | Performance reviews and rating analysis           |
+| 🎓 Training            | Training programs and employee participation      |
+| 🎯 Recruitment         | Candidate tracking and recruitment funnel         |
+| 🗄️ Schema Explorer    | Explore database structure                        |
+| ⚡ SQL Studio           | Execute and analyse SQL queries                   |
+| 📈 Reports             | HR reporting and data export                      |
+| 📜 3NF Documentation   | Normalization and functional dependencies         |
+| ⚙️ Database Connection | MySQL/TiDB connection management                  |
+
+---
+
+## 🏗️ Architecture
 
 ```text
-                         ┌──────────────────────┐
-                         │      User / HR       │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-                         ┌──────────────────────┐
-                         │  Streamlit Dashboard │
-                         │       app.py         │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-                         ┌──────────────────────┐
-                         │ Database Connection  │
-                         │   connection.py      │
-                         └──────────┬───────────┘
-                                    │
-                       ┌────────────┴────────────┐
-                       │                         │
-                       ▼                         ▼
-              ┌─────────────────┐      ┌─────────────────┐
-              │      MySQL      │      │     SQLite      │
-              │  Primary Engine │      │ Portable Fallback│
-              └─────────────────┘      └─────────────────┘
-                       │                         │
-                       └────────────┬────────────┘
-                                    ▼
-                         ┌──────────────────────┐
-                         │   Queries & Analytics│
-                         │      queries.py      │
-                         └──────────────────────┘
-````
+                    ┌─────────────────────┐
+                    │       User / HR     │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Streamlit Dashboard │
+                    │       app.py        │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Database Connection │
+                    │   connection.py     │
+                    └──────────┬──────────┘
+                               │
+                 ┌─────────────┴─────────────┐
+                 │                           │
+                 ▼                           ▼
+        ┌─────────────────┐        ┌─────────────────┐
+        │   TiDB Cloud    │        │      SQLite     │
+        │ MySQL-Compatible│        │ Portable Fallback│
+        │   Production    │        │ Local / Offline │
+        └────────┬────────┘        └─────────────────┘
+                 │
+                 ▼
+        ┌─────────────────────┐
+        │ HR Management Data  │
+        │                     │
+        │ Employee            │
+        │ Department          │
+        │ Project             │
+        │ Attendance          │
+        │ Leave               │
+        │ Payroll             │
+        │ Performance         │
+        │ Training            │
+        │ Recruitment         │
+        └─────────────────────┘
+```
 
 ---
 
-## Database Design
+## 🗃️ Database Design
 
-The database contains **12 relational entities**:
+The system contains **12 relational entities**:
 
 ```text
 HR_MANAGER
@@ -179,369 +129,167 @@ EMPLOYEE_TRAINING
 RECRUITMENT
 ```
 
-### Entity Relationships
+The database uses:
+
+* Primary keys
+* Foreign keys
+* Referential integrity
+* One-to-many relationships
+* Many-to-many relationships
+* Bridge tables
+* Functional dependencies
+* 1NF
+* 2NF
+* 3NF
+
+### Example relationship
 
 ```text
-                         HR_MANAGER
-                              │
-                              │ 1:M
-                              ▼
-                         DEPARTMENT
-                              │
-                              │ 1:M
-                              ▼
-                          EMPLOYEE
-                         /   │   \
-                        /    │    \
-                       ▼     ▼     ▼
-                ATTENDANCE  LEAVE  PAYROLL
-                             
-                          EMPLOYEE
-                         /        \
-                        /          \
-                       ▼            ▼
-              EMPLOYEE_PROJECT  EMPLOYEE_TRAINING
-                    │                 │
-                    ▼                 ▼
-                 PROJECT           TRAINING
+DEPARTMENT
+     │
+     │ 1:M
+     ▼
+EMPLOYEE
+   │ │ │
+   │ │ └──────── PAYROLL
+   │ └────────── LEAVE
+   └──────────── ATTENDANCE
 
-                    EMPLOYEE
-                       │
-                       ▼
-              PERFORMANCE_REVIEW
-
-                    RECRUITMENT
-```
-
-The complete EER design and relationship cardinalities are documented in:
-
-```text
-docs/EER_DIAGRAM.md
+EMPLOYEE
+   │
+   ├──────── EMPLOYEE_PROJECT ─────── PROJECT
+   │
+   └──────── EMPLOYEE_TRAINING ───── TRAINING
 ```
 
 ---
 
-## Normalization
+## 🛠️ Technology Stack
 
-The database follows normalization principles through **1NF, 2NF, and 3NF**.
-
-### First Normal Form — 1NF
-
-* Attributes contain atomic values.
-* Repeating and multi-valued relationships are separated.
-* Many-to-many relationships are represented using bridge tables.
-
-Examples:
-
-```text
-EMPLOYEE_PROJECT
-EMPLOYEE_TRAINING
-```
-
-### Second Normal Form — 2NF
-
-The design eliminates partial dependencies on composite keys.
-
-For example:
-
-```text
-(Employee_ID, Project_ID) → Employee_Role
-(Employee_ID, Project_ID) → Hours_Worked
-```
-
-Both attributes depend on the complete composite key.
-
-### Third Normal Form — 3NF
-
-Transitive dependencies are separated into independent relations.
-
-For example:
-
-```text
-Employee_ID → Department_ID
-Department_ID → Department_Name
-```
-
-Department-specific information is therefore maintained in the `DEPARTMENT` table rather than being unnecessarily repeated in `EMPLOYEE`.
-
-Detailed normalization analysis is available in:
-
-```text
-docs/NORMALIZATION.md
-```
+| Technology                | Purpose                           |
+| ------------------------- | --------------------------------- |
+| Python                    | Application logic                 |
+| Streamlit                 | Web application                   |
+| MySQL                     | Relational database compatibility |
+| TiDB Cloud                | Cloud database hosting            |
+| SQLite                    | Portable fallback database        |
+| Pandas                    | Data processing                   |
+| Plotly                    | Data visualization                |
+| PyMySQL                   | Database connectivity             |
+| SQL                       | Database queries and analytics    |
+| Git                       | Version control                   |
+| GitHub                    | Source repository                 |
+| Streamlit Community Cloud | Application deployment            |
 
 ---
 
-## Functional Dependencies
-
-The project documents the following functional dependencies:
-
-```text
-A  → B
-B  → C
-B  → D
-D  → E
-F  → G
-F  → H
-AF → I
-AF → J
-A  → D
-AF → B
-```
-
-### Attribute Mapping
-
-```text
-A = Employee_ID
-B = Department_ID
-C = Department_Name
-D = Manager_ID
-E = Manager_Name
-F = Project_ID
-G = Project_Name
-H = Project_Budget
-I = Employee_Role
-J = Hours_Worked
-```
-
-The complete mathematical analysis and normalization proof are provided in:
-
-```text
-docs/NORMALIZATION.md
-```
-
----
-
-## Project Structure
+## 📁 Project Structure
 
 ```text
 Employee-and-HR-Management-Dashboard/
 │
-└── employee-hr-management-system/
-    │
-    ├── app.py
-    ├── README.md
-    ├── requirements.txt
-    ├── LICENSE
-    ├── run.bat
-    ├── run.ps1
-    │
-    ├── database/
-    │   ├── __init__.py
-    │   ├── connection.py
-    │   ├── queries.py
-    │   └── hr_management_portable.db
-    │
-    ├── sql/
-    │   ├── 01_schema.sql
-    │   ├── 02_seed_data.sql
-    │   └── 03_complex_queries.sql
-    │
-    ├── docs/
-    │   ├── NORMALIZATION.md
-    │   ├── EER_DIAGRAM.md
-    │   └── ASSIGNMENT_REPORT.md
-    │
-    └── tests/
-        └── test_system.py
+├── employee-hr-management-system/
+│   │
+│   ├── app.py
+│   ├── requirements.txt
+│   │
+│   ├── database/
+│   │   ├── __init__.py
+│   │   ├── connection.py
+│   │   ├── queries.py
+│   │   └── hr_management_portable.db
+│   │
+│   ├── sql/
+│   │   ├── 01_schema.sql
+│   │   ├── 02_seed_data.sql
+│   │   └── 03_complex_queries.sql
+│   │
+│   ├── docs/
+│   │   ├── NORMALIZATION.md
+│   │   ├── EER_DIAGRAM.md
+│   │   └── ASSIGNMENT_REPORT.md
+│   │
+│   └── tests/
+│       └── test_system.py
+│
+└── README.md
 ```
 
 ---
 
-## Database Files
+## ☁️ Cloud Deployment
 
-### `01_schema.sql`
+The production application uses the following architecture:
 
-Contains the database schema and table definitions, including:
-
-* Tables
-* Primary keys
-* Foreign keys
-* Constraints
-* Relationships
-* Indexes
-
-### `02_seed_data.sql`
-
-Contains sample data used to populate the database for demonstration and testing.
-
-### `03_complex_queries.sql`
-
-Contains the predefined complex SQL queries used for the academic database requirements.
-
----
-
-## SQL Queries
-
-The project includes 10 complex SQL queries covering different database concepts.
-
-### Query 1 — Department Budget vs Salary Expenditure
-
-Analyses department budgets against actual salary expenditure.
-
-Concepts:
-
-* `LEFT JOIN`
-* `GROUP BY`
-* Aggregate functions
-* Calculated percentages
-
-### Query 2 — Cross-Department Project Workload
-
-Analyses project staffing and employee hours.
-
-Concepts:
-
-* Many-to-many relationships
-* Bridge-table aggregation
-* `JOIN`
-* `GROUP BY`
-
-### Query 3 — Top Performers by Department
-
-Ranks employees according to their performance within departments.
-
-Concepts:
-
-* CTE
-* Window functions
-* `DENSE_RANK()`
-* `PARTITION BY`
-
-### Query 4 — Training Program ROI
-
-Analyses training participation and assessment performance.
-
-Concepts:
-
-* Multiple joins
-* Aggregation
-* `HAVING`
-* Average calculations
-
-### Query 5 — Monthly Payroll Reconciliation
-
-Analyses payroll components including:
-
-* Basic salary
-* Allowances
-* Deductions
-* Net salary
-
-### Query 6 — Employee 360-Degree Profile
-
-Combines information from multiple entities to provide a broader employee profile.
-
-### Query 7 — Attendance Compliance
-
-Analyses attendance and work patterns using conditional aggregation.
-
-### Query 8 — Leave Request Analysis
-
-Analyses leave categories, statuses, and approval information.
-
-### Query 9 — Recruitment Conversion Funnel
-
-Tracks candidate progression through recruitment stages.
-
-### Query 10 — Salary Equity Analysis
-
-Analyses:
-
-* Minimum salary
-* Maximum salary
-* Average salary
-* Salary variation
-* Department-level salary differences
-
----
-
-## Quick Start
-
-### Prerequisites
-
-Install the following:
-
-* Python 3.10 or newer
-* Git
-* MySQL 8.0+ *(optional)*
-
-MySQL is optional because the application includes a portable SQLite database.
-
----
-
-## 1. Clone the Repository
-
-```bash
-git clone https://github.com/AnanyaHarithas2607/Employee-and-HR-Management-Dashboard.git
+```text
+GitHub
+   │
+   ▼
+Streamlit Community Cloud
+   │
+   │ Streamlit Secrets
+   ▼
+TiDB Cloud
+   │
+   ▼
+hr_management
 ```
 
-Move into the application directory:
+Database credentials are stored using **Streamlit Secrets** rather than committed to the repository.
+
+Example configuration:
+
+```toml
+[mysql]
+host = "your-database-host"
+port = 4000
+user = "your-database-user"
+password = "your-database-password"
+database = "hr_management"
+```
+
+> ⚠️ Never commit real database passwords or other credentials to GitHub.
+
+---
+
+## 💻 Run Locally
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/an4848/Employee-and-HR-Management-Dashboard.git
 cd Employee-and-HR-Management-Dashboard/employee-hr-management-system
 ```
 
----
+### 2. Create a virtual environment
 
-## 2. Create a Virtual Environment
+Windows:
 
-### Windows
-
-```powershell
+```bash
 py -m venv .venv
-```
-
-Activate it:
-
-```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-### macOS / Linux
+macOS/Linux:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
----
-
-## 3. Install Dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-On Windows, if `python` is mapped to another Python installation, use:
-
-```powershell
-py -m pip install -r requirements.txt
-```
-
----
-
-## 4. Run the Application
-
-### Recommended
+### 4. Start Streamlit
 
 ```bash
 python -m streamlit run app.py
 ```
 
-On Windows, you can also use the included launcher:
-
-```text
-run.bat
-```
-
-or:
-
-```powershell
-.\run.ps1
-```
-
-The Streamlit dashboard will be available at:
+The application will be available at:
 
 ```text
 http://localhost:8501
@@ -549,232 +297,223 @@ http://localhost:8501
 
 ---
 
-# MySQL Configuration
+## 🐬 MySQL / TiDB Database
 
-The application can connect to a local MySQL database.
+The application is compatible with MySQL-style relational databases.
 
-Typical configuration:
+For local development, you can use:
 
 ```text
 Host: localhost
 Port: 3306
-User: root
 Database: hr_management
-Password: <your MySQL password>
 ```
 
-After starting MySQL:
+For cloud deployment, the application can connect to a MySQL-compatible TiDB Cloud instance through Streamlit Secrets.
 
-1. Launch the Streamlit application.
-2. Enter the MySQL connection details.
-3. Connect to the database.
-4. Initialize the database if required.
-
-The database schema and seed files are available under:
+The SQL files required to create and populate the database are located in:
 
 ```text
 sql/
-```
-
-### Manual MySQL Initialization
-
-If required, initialize the schema:
-
-```bash
-mysql -u root -p < sql/01_schema.sql
-```
-
-Then load the sample data:
-
-```bash
-mysql -u root -p < sql/02_seed_data.sql
+├── 01_schema.sql
+├── 02_seed_data.sql
+└── 03_complex_queries.sql
 ```
 
 ---
 
-# SQLite Portable Mode
+## 🗄️ SQLite Portable Mode
 
-The project includes a portable SQLite database:
+The project also includes a portable SQLite database:
 
 ```text
 database/hr_management_portable.db
 ```
 
-SQLite mode allows the project to run without a separate MySQL server.
+SQLite fallback mode allows the application to run without a separate MySQL server.
 
 This is useful for:
 
-* Demonstrations
-* Academic evaluation
-* Offline execution
+* Academic demonstrations
+* Offline development
 * Testing
 * Quick setup
-
-The application can use the SQLite database when MySQL is unavailable.
-
----
-
-# Testing
-
-System tests are provided in:
-
-```text
-tests/test_system.py
-```
-
-Run the test file using:
-
-```bash
-python tests/test_system.py
-```
-
-On Windows:
-
-```powershell
-py tests/test_system.py
-```
+* Environments without MySQL
 
 ---
 
-# Documentation
+## ⚡ SQL Studio
 
-Additional project documentation is available in the `docs` directory.
+The application includes an interactive SQL Studio.
 
-### Normalization Documentation
+It supports:
 
-```text
-docs/NORMALIZATION.md
-```
+* Custom SQL queries
+* Query execution
+* Interactive result tables
+* Predefined academic queries
+* Data analysis
 
-Contains:
+The project also contains complex SQL examples covering:
+
+* `JOIN`
+* `GROUP BY`
+* Aggregation
+* CTEs
+* Window functions
+* `DENSE_RANK()`
+* Conditional aggregation
+* Many-to-many relationships
+* Salary analysis
+* Recruitment analytics
+
+---
+
+## 📚 Database & Academic Documentation
+
+Additional documentation is available in the `docs/` directory.
+
+### Normalization
+
+`docs/NORMALIZATION.md`
+
+Covers:
 
 * Functional dependencies
 * Attribute mapping
-* 1NF analysis
-* 2NF analysis
-* 3NF analysis
+* 1NF
+* 2NF
+* 3NF
 * Normalization proof
 * Armstrong's axioms
 
 ### EER Diagram
 
-```text
-docs/EER_DIAGRAM.md
-```
+`docs/EER_DIAGRAM.md`
 
-Contains:
+Documents:
 
-* Entity relationships
+* Entities
+* Relationships
 * Cardinalities
-* EER representation
 * Database structure
 
 ### Assignment Report
 
-```text
-docs/ASSIGNMENT_REPORT.md
-```
+`docs/ASSIGNMENT_REPORT.md`
 
 Contains the detailed academic documentation for the project.
 
 ---
 
-# Dashboard Preview
+## 🧪 Testing
 
-Add screenshots of the application here after uploading them to the repository.
-
-Example:
+System tests are available in:
 
 ```text
-docs/images/dashboard.png
-docs/images/employee-directory.png
-docs/images/payroll.png
-docs/images/sql-studio.png
+tests/test_system.py
 ```
 
-Recommended screenshots:
+Run:
 
-1. Executive Dashboard
-2. Employee Directory
-3. Department & Budget Analysis
-4. Payroll Dashboard
-5. Recruitment Funnel
-6. SQL Studio
+```bash
+python tests/test_system.py
+```
+
+Windows:
+
+```bash
+py tests/test_system.py
+```
 
 ---
 
-# Security
+## 🔐 Security
 
-Do not commit actual database passwords or private credentials to GitHub.
+Database credentials should **never** be committed to GitHub.
 
-If environment variables are used, keep actual credentials in a local `.env` file.
+Use:
 
-Example configuration:
+* Streamlit Secrets for Streamlit Cloud
+* Environment variables for local development
+* `.env` files locally when appropriate
+
+Never publish:
 
 ```text
-MYSQL_HOST=localhost
-MYSQL_PORT=3306
-MYSQL_USER=root
-MYSQL_PASSWORD=your_password
-MYSQL_DATABASE=hr_management
+MYSQL_PASSWORD
+database passwords
+API keys
+private credentials
 ```
 
-Do not upload a `.env` file containing real credentials.
+---
+
+## 🎯 Project Objectives
+
+This project demonstrates practical knowledge of:
+
+* Relational database design
+* EER modelling
+* Functional dependencies
+* Database normalization
+* SQL
+* CRUD operations
+* Primary and foreign keys
+* Many-to-many relationships
+* Python programming
+* Streamlit application development
+* Data visualization
+* Cloud database connectivity
+* Cloud application deployment
+* Secure credential management
 
 ---
 
-# Academic Requirements Covered
+## 🚀 Live Demo
 
-This project demonstrates:
+### Employee & HR Management Dashboard
 
-* [x] EER modelling
-* [x] Relational database design
-* [x] Functional dependencies
-* [x] First Normal Form
-* [x] Second Normal Form
-* [x] Third Normal Form
-* [x] Primary keys
-* [x] Foreign keys
-* [x] Referential integrity
-* [x] One-to-many relationships
-* [x] Many-to-many relationships
-* [x] Bridge tables
-* [x] CRUD operations
-* [x] SQL joins
-* [x] Aggregation
-* [x] Subqueries
-* [x] Common Table Expressions
-* [x] Window functions
-* [x] Conditional aggregation
-* [x] Database connectivity
-* [x] Data visualization
-* [x] Interactive dashboard
-* [x] Automated testing
-* [x] Academic documentation
+**https://employee-and-hr-management-dashboard-wknmafdgk77vpdpfecrwwr.streamlit.app/**
+
+The deployed application currently uses a cloud-hosted MySQL-compatible database through TiDB Cloud.
 
 ---
 
-# Future Enhancements
+## 🤝 Contributing
 
-Possible future improvements include:
+Contributions and improvements are welcome.
 
-* Role-based authentication
-* HR administrator login
-* Advanced employee analytics
-* Exporting reports to PDF/Excel
-* Email notifications
-* Advanced recruitment analytics
-* Additional dashboard filters
-* Cloud database deployment
-* Deployment to a cloud hosting platform
+If you'd like to contribute:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test the application
+5. Submit a pull request
 
 ---
 
-# Repository
+## ⭐ Support
 
-GitHub:
+If you find this project useful:
 
-[https://github.com/AnanyaHarithas2607/Employee-and-HR-Management-Dashboard](https://github.com/AnanyaHarithas2607/Employee-and-HR-Management-Dashboard)
+⭐ Star the repository
+🍴 Fork the project
+🐛 Report bugs
+💡 Suggest improvements
+🔧 Submit pull requests
 
 ---
 
+## 📄 License
+
+This project is available under the license included in the repository.
+
+---
+
+<p align="center">
+
+**Built with 🐍 Python · 🎈 Streamlit · 🐬 MySQL · ☁️ TiDB Cloud**
+
+</p>
