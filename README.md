@@ -1,17 +1,5 @@
 # 🏢 Employee & HR Management Dashboard
 
-<p align="center">
-
-**A full-stack Employee & Human Resources Management System built with Python, Streamlit, MySQL, and TiDB Cloud.**
-
-<a href="https://employee-and-hr-management-dashboard-wknmafdgk77vpdpfecrwwr.streamlit.app/">
-  🚀 Live Demo
-</a>
-
-</p>
-
----
-
 ## 🚀 Live Application
 
 **Try the deployed application:**
